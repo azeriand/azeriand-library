@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "module": "NodeNext",
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}

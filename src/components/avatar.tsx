@@ -5,7 +5,7 @@ type AvatarProps = {
     style?: React.CSSProperties;
 }
 
-export default function Avatar({ src, className = '', style }: AvatarProps){
+export function Avatar({ src, className = '', style }: AvatarProps){
     return(
         <img className={`size-[3rem] rounded-2xl ${className}`} 
         src={src} 

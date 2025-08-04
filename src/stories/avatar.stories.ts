@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '../components/avatar';
+import { Avatar } from '../components/avatar';
 // @ts-ignore
 import goku2 from './assets/goku2.jpg'
 

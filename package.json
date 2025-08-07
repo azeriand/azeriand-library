@@ -1,6 +1,6 @@
 {
   "name": "azeriand-library",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "A React component library with Tailwind CSS",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,8 @@
     "src/styles/globals.css"
   ],
   "scripts": {
-    "build": "npm run build:types && npm run build:js",
+    "build": "npm run build:types && npm run build:js && npm run postbuild",
+    "postbuild": "node copy-styles.js",
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "build:js": "vite build",
     "dev": "vite build --watch",

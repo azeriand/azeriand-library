@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import '../components/card/card.css';
+@import '../components/button/button.css';
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

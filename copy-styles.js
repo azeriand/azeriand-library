@@ -21,3 +21,14 @@ if (!fs.existsSync(cardDestDir)) {
 }
 fs.copyFileSync(cardSrc, cardDest);
 console.log('Copied card.css to dist/components/card/');
+
+
+// Copy button.css
+const buttonSrc = path.resolve(__dirname, 'src/components/button/button.css');
+const buttonDestDir = path.resolve(__dirname, 'dist/components/button');
+const buttonDest = path.join(buttonDestDir, 'button.css');
+if (!fs.existsSync(buttonDestDir)) {
+  fs.mkdirSync(buttonDestDir, { recursive: true });
+}
+fs.copyFileSync(buttonSrc, buttonDest);
+console.log('Copied button.css to dist/components/button/');

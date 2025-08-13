@@ -1,6 +1,6 @@
-import './button.css'
 import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'react';
 import { Card } from '../card/card'
+const buttonCSS = require('./button.css');
 
 type ButtonProps = {
     children?: ReactNode;

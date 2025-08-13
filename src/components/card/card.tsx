@@ -1,6 +1,6 @@
-import './card.css'
 import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../theme-context';
+const cardCSS = require('./card.css');
 
 type CardProps = {
     children?: ReactNode;

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import { resolve } from 'path'
 
 export default defineConfig({
@@ -8,8 +9,9 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      exclude: ['src/stories/**/*', '**/*.stories.*', '**/*.test.*'],
+      exclude: ['src/stories/**/*', '**/*.stories.*', '**/*.test.*', 'src/styles-only.ts'],
     }),
+    cssInjectedByJsPlugin(), // This injects CSS into JS automatically
   ],
   build: {
     lib: {
@@ -29,7 +31,7 @@ export default defineConfig({
       },
     },
     sourcemap: true,
-    minify: false, // Keep unminified for better debugging
+    minify: false,
   },
   css: {
     postcss: {

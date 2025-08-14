@@ -1,6 +1,6 @@
-import './card.css'
 import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../theme-context';
+import './card.css';
 
 type CardProps = {
     children?: ReactNode;

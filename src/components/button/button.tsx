@@ -1,10 +1,6 @@
 import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'react';
 import { Card } from '../card/card'
-import { injectCSS } from '../../utils/css-injection';
-import { BUTTON_CSS } from './button-styles';
-
-// Inject Button CSS when the component is imported
-injectCSS(BUTTON_CSS, 'button-component');
+import './button.css';
 
 type ButtonProps = {
     children?: ReactNode;

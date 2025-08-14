@@ -1,6 +1,10 @@
 import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../theme-context';
-const cardCSS = require('./card.css');
+import { injectCSS } from '../../utils/css-injection';
+import { CARD_CSS } from './card-styles';
+
+// Inject Card CSS when the component is imported
+injectCSS(CARD_CSS, 'card-component');
 
 type CardProps = {
     children?: ReactNode;

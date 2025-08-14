@@ -15,15 +15,39 @@ yarn add azeriand-library
 ### Basic Usage
 
 ```tsx
-import { Button } from 'azeriand-library';
-import 'azeriand-library/dist/style.css'; // Import the CSS
+import { Button, Card } from 'azeriand-library';
 
 function App() {
   return (
     <div>
-      <Button color="#ff6b6b">
-        Click me!
-      </Button>
+      <Card>
+        <Button color="blue">
+          Click me!
+        </Button>
+      </Card>
+    </div>
+  );
+}
+```
+
+**Note**: Component styles are automatically injected when you import components. No separate CSS imports are required for component functionality.
+
+### Optional: Global Styles
+
+If you want to use Tailwind classes and design tokens in your own code, you can optionally import the global styles:
+
+```tsx
+import { Button, Card } from 'azeriand-library';
+import 'azeriand-library/dist/styles.css'; // Optional: for Tailwind classes and design tokens
+
+function App() {
+  return (
+    <div className="bg-red-500"> {/* This will work with global styles imported */}
+      <Card>
+        <Button color="blue">
+          Click me!
+        </Button>
+      </Card>
     </div>
   );
 }
@@ -31,8 +55,23 @@ function App() {
 
 ### With Tailwind CSS
 
-If your project uses Tailwind CSS, make sure to include the library's source files in your Tailwind configuration:
+Component styles are automatically included, but if you want to use Tailwind classes in your own application, you have two options:
 
+**Option 1: Import global styles** (includes design tokens and Tailwind base styles)
+```tsx
+import { Button } from 'azeriand-library';
+import 'azeriand-library/dist/styles.css';
+
+function App() {
+  return (
+    <div className="bg-blue-500 p-4"> {/* Tailwind classes work */}
+      <Button color="red">My Button</Button>
+    </div>
+  );
+}
+```
+
+**Option 2: Configure Tailwind to scan the library** (if you want to use your own Tailwind config)
 ```js
 // tailwind.config.js
 module.exports = {
@@ -43,8 +82,6 @@ module.exports = {
   // ... rest of your config
 }
 ```
-
-Then you can use the components without importing the CSS:
 
 ```tsx
 import { Button } from 'azeriand-library';

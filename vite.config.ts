@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      exclude: ['src/stories/**/*', '**/*.stories.*', '**/*.test.*'],
+      exclude: ['src/stories/**/*', '**/*.stories.*', '**/*.test.*', 'src/styles-only.ts'],
     }),
   ],
   build: {
@@ -29,7 +29,8 @@ export default defineConfig({
       },
     },
     sourcemap: true,
-    minify: false, // Keep unminified for better debugging
+    minify: false,
+    cssCodeSplit: false,
   },
   css: {
     postcss: {

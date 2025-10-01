@@ -2,7 +2,7 @@ import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'r
 import { ThemeContext } from '../theme-context';
 import './card.css';
 
-type CardProps = {
+export type CardProps = {
     children?: ReactNode;
     noPadding?: boolean;
     noBlur?: boolean;

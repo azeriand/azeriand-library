@@ -1,5 +1,6 @@
 import './input.css'
 import { Card, CardProps } from '../card/card'
+import { ChangeEventHandler } from 'react';
 
 export type InputProps = CardProps & {
     type?: string;
@@ -17,10 +18,8 @@ export type InputProps = CardProps & {
 }
 
 export function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}: InputProps){
-    function inputUpdated(ev: InputEvent){
-        if (ev.target instanceof HTMLInputElement) {
-            onChange?.(ev.target.value)
-        }
+    function inputUpdated(ev: React.ChangeEvent<HTMLInputElement>){
+        onChange?.(ev.target.value)
     }
 
     const classnames = `flex`

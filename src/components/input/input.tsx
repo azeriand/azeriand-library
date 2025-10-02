@@ -17,8 +17,10 @@ export type InputProps = CardProps & {
 }
 
 export function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}: InputProps){
-    function inputUpdated(ev){
-        onChange?.(ev.target.value)
+    function inputUpdated(ev: InputEvent){
+        if (ev.target instanceof HTMLInputElement) {
+            onChange?.(ev.target.value)
+        }
     }
 
     const classnames = `flex`

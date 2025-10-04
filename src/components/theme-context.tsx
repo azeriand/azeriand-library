@@ -1,4 +1,6 @@
 import { useState, createContext } from 'react'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 type ThemeMode = 'dark' | 'light';
 const DEFAULT_THEME = 'dark';
@@ -12,14 +14,16 @@ export const ThemeContext = createContext<ThemeContext>({theme: DEFAULT_THEME, s
 
 import { ReactNode } from 'react';
 
-export default function ThemeContextComponent({children}: {children: ReactNode}){
+export function ThemeContextComponent({children}: {children: ReactNode}){
 
     const [theme, setTheme] = useState<ThemeMode>(DEFAULT_THEME)
 
     //Creando el componente donde todos los hijos pueden acceder al contexto (siendo children los props)
     return(
         <ThemeContext.Provider value={{theme, setTheme}}> 
-            {children}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                {children}
+            </LocalizationProvider>
         </ThemeContext.Provider>
     )
 }

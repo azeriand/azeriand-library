@@ -10,3 +10,4 @@ export { Calendar } from './components/calendar/calendar';
 export { ThemeContext, ThemeContextComponent } from './components/theme-context';
 export { Dropdown } from './components/dropdown/dropdown';
 export { DropdownButton } from './components/dropdown/dropdown-button';
+export { NewSlider } from './components/slider/slider';

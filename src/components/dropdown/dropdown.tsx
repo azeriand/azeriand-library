@@ -9,7 +9,7 @@ type DropdownProps = {
     onSelected?: (option: string) => void;
 }
 
-export function Dropdown({buttonText, options, onSelected}: DropdownProps) {
+export function Dropdown({buttonText, options = [], onSelected}: DropdownProps) {
 
     const [open, setOpen] = useState(false);
     const [optionSelected, setOptionSelected] = useState(buttonText);

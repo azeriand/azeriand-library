@@ -12,3 +12,5 @@ export { Dropdown } from './components/dropdown/dropdown';
 export { DropdownButton } from './components/dropdown/dropdown-button';
 export { NewSlider } from './components/slider/slider';
 export { Tab } from './components/tab/tab';
+export { Timeline } from './components/timeline/timeline';
+export { TlListItem } from './components/timeline/timeline-list-item';

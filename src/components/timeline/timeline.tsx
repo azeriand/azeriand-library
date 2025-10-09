@@ -15,7 +15,7 @@ export function Timeline({children, faded, ...cardProps}: TimelineProps) {
 
     return(
         <Card className='rounded-sm' noPadding appearance='ghost' {...cardProps} style={{...cardProps.style, ...timelineStyle}}>
-            <ul className='vertical-line list-disc font-bold text-start relative' style={{paddingInlineStart: 20}}>
+            <ul className='vertical-line list-disc font-bold text-start relative' style={{paddingInlineStart: 16.75}}>
                 {children}
             </ul>
         </Card>

@@ -86,15 +86,19 @@ export const IconAndPosition: Story = {
           backgroundPosition: 'center',
           padding: 32,
           minHeight: 400,
+          display: 'flex',
+          justifyItems: 'start',
+          alignItems: 'start',
         }
       },
-      React.createElement(
-        Button,
-        { appearance: 'mate', label: 'Without Icon', className: 'mr-[1rem]' },
-      ),
+      
       React.createElement(
         Button,
         { appearance: 'mate', label: 'Left', position: 'left', icon: React.createElement(FaCircleLeft), className: 'mr-[1rem]' },
+      ),
+      React.createElement(
+        Button,
+        { appearance: 'mate', label: 'Without Icon', className: 'mr-[1rem]' },
       ),
       React.createElement(
         Button,

@@ -15,21 +15,23 @@ type Story = StoryObj<typeof Badge>;
 
 export const Default: Story = {
   args: {
-    label: 'Badge',
+    label: 'Success',
     color: 'gray'
   },
 };
 
-export const Success: Story = {
+export const Small: Story = {
   args: {
+    size: 'sm',
     label: 'Success',
     color: 'green'
   },
 };
 
-export const Error: Story = {
+export const Large: Story = {
   args: {
-    label: 'Error',
+    size: 'lg',
+    label: 'Success',
     color: 'red'
   },
 };

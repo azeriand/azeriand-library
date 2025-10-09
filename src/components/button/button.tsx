@@ -31,6 +31,10 @@ export function Button({children, label, icon, position='left', onClick, size, c
         className = `w-fit ${className}`
     }
 
+    if (icon && !label){
+        specificCardClassNames = 'square-8 p-2'
+    }
+
     let cardClassNames = `${specificCardClassNames} ${defaultCardClassNames}`
 
     if (className){

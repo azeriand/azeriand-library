@@ -102,6 +102,10 @@ export const IconAndPosition: Story = {
       ),
       React.createElement(
         Button,
+        { appearance: 'mate', icon: React.createElement(FaCircleRight), className: 'mr-[1rem]' },
+      ),
+      React.createElement(
+        Button,
         { appearance: 'mate', label: 'Right', position: 'right', icon: React.createElement(FaCircleRight), className: 'mr-[1rem]' },
       ),
     );

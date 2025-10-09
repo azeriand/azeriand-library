@@ -21,22 +21,23 @@ type ButtonProps = {
 
 export function Button({children, label, icon, position='left', onClick, size, className, ...cardProps} : ButtonProps){
 
-    let cardClassNames = 'flex justify-center items-center gap-x-[0.40rem] h-[2.5rem] min-w-[2.5rem] box-border p-0'
+    let defaultCardClassNames = 'flex justify-center items-center gap-x-[0.40rem] box-border cursor-pointer'
+    
+    
+    let specificCardClassNames = 'min-w-[2.5rem] px-[1rem] py-1'
 
-    if (label) {
-        cardClassNames += ' px-0 py-1'
+    if (size === 'sm'){
+        specificCardClassNames = 'min-w-auto text-xs px-[0.5rem] py-1'
+        className = `w-fit ${className}`
     }
 
+    let cardClassNames = `${specificCardClassNames} ${defaultCardClassNames}`
 
     if (className){
         const roundedMatch = className.match(/rounded\-[a-z0-9]+/g)
         if (roundedMatch){
             cardClassNames += ' ' + roundedMatch[roundedMatch.length-1]
         }
-    }
-
-    if (size === 'sm'){
-        cardClassNames += ' h-[2rem] w-[2rem] min-w-auto'
     }
 
     const buttonClick: MouseEventHandler<HTMLButtonElement> = (ev) => {

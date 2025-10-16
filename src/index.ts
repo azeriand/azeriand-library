@@ -9,7 +9,6 @@ export { Input } from './components/input/input';
 export { Calendar } from './components/calendar/calendar';
 export { ThemeContext, ThemeContextComponent } from './components/theme-context';
 export { Dropdown } from './components/dropdown/dropdown';
-export { DropdownButton } from './components/dropdown/dropdown-button';
 export { NewSlider } from './components/slider/slider';
 export { Tab } from './components/tab/tab';
 export { Timeline } from './components/timeline/timeline';

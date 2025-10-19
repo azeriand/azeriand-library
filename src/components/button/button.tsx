@@ -21,14 +21,14 @@ type ButtonProps = {
 
 export function Button({children, label, icon, position='left', onClick, size, className, ...cardProps} : ButtonProps){
 
-    let defaultCardClassNames = 'flex justify-center items-center gap-x-[0.40rem] box-border cursor-pointer'
+    let defaultCardClassNames = 'flex justify-center items-center gap-x-[0.40rem] box-border cursor-pointer w-fit '
     
     
     let specificCardClassNames = 'min-w-[2.5rem] px-[1rem] py-1'
 
     if (size === 'sm'){
         specificCardClassNames = 'min-w-auto text-xs px-[0.5rem] py-1'
-        className = `w-fit ${className}`
+        className = `${className}`
     }
 
     if (icon && !label){
@@ -51,13 +51,11 @@ export function Button({children, label, icon, position='left', onClick, size, c
     }
    
     return(
-        <button className={className} onClick={buttonClick}>
-            <Card noBlur noPadding className={cardClassNames} {...cardProps}>
-                {position === 'left' && icon}
-                {label}
-                {children}
-                {position === 'right' && icon}
-            </Card>
-        </button>
+        <Card as="button" noBlur noPadding className={cardClassNames + className} onClick={buttonClick} {...cardProps}>
+            {position === 'left' && icon}
+            {label}
+            {children}
+            {position === 'right' && icon}
+        </Card>
     )
 }

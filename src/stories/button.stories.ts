@@ -28,23 +28,27 @@ export const Appearance: Story = {
           backgroundPosition: 'center',
           padding: 32,
           minHeight: 400,
+          display: 'flex',
+          gap: '1rem',
+          justifyItems: 'start',
+          alignItems: 'start',
         }
       },
       React.createElement(
         Button,
-        { appearance: 'mate', label: 'Mate button', className: 'mr-[1rem]' },
+        { appearance: 'mate', label: 'Mate button' },
       ),
       React.createElement(
         Button,
-        { label: 'Default button', className: 'mr-[1rem]' },
+        { label: 'Default button' },
       ),
       React.createElement(
         Button,
-        { label: 'Outlined button', appearance: 'outlined', className: 'mr-[1rem]' },
+        { label: 'Outlined button', appearance: 'outlined' },
       ),
       React.createElement(
         Button,
-        { label: 'Ghost button', appearance: 'ghost', className: 'mr-[1rem]' },
+        { label: 'Ghost button', appearance: 'ghost' },
       )
     );
   },
@@ -62,15 +66,19 @@ export const Size: Story = {
           backgroundPosition: 'center',
           padding: 32,
           minHeight: 400,
+          display: 'flex',
+          gap: '1rem',
+          justifyItems: 'start',
+          alignItems: 'start',
         }
       },
       React.createElement(
         Button,
-        { appearance: 'mate', label: 'Normal', className: 'mr-[1rem]' },
+        { appearance: 'mate', label: 'Normal' },
       ),
       React.createElement(
         Button,
-        { appearance: 'mate', label: 'Small', size: 'sm', className: 'mr-[1rem]' },
+        { appearance: 'mate', label: 'Small', size: 'sm' },
       ),
     );
   },
@@ -87,6 +95,7 @@ export const IconAndPosition: Story = {
           padding: 32,
           minHeight: 400,
           display: 'flex',
+          gap: '1rem',
           justifyItems: 'start',
           alignItems: 'start',
         }
@@ -94,19 +103,19 @@ export const IconAndPosition: Story = {
       
       React.createElement(
         Button,
-        { appearance: 'mate', label: 'Left', position: 'left', icon: React.createElement(FaCircleLeft), className: 'mr-[1rem]' },
+        { appearance: 'mate', label: 'Left', position: 'left', icon: React.createElement(FaCircleLeft) },
       ),
       React.createElement(
         Button,
-        { appearance: 'mate', label: 'Without Icon', className: 'mr-[1rem]' },
+        { appearance: 'mate', label: 'Without Icon' },
       ),
       React.createElement(
         Button,
-        { appearance: 'mate', icon: React.createElement(FaCircleRight), className: 'mr-[1rem]' },
+        { appearance: 'mate', icon: React.createElement(FaCircleRight) },
       ),
       React.createElement(
         Button,
-        { appearance: 'mate', label: 'Right', position: 'right', icon: React.createElement(FaCircleRight), className: 'mr-[1rem]' },
+        { appearance: 'mate', label: 'Right', position: 'right', icon: React.createElement(FaCircleRight) },
       ),
     );
   },

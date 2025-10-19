@@ -1,8 +1,9 @@
-import { MouseEventHandler, ReactNode, useContext, useEffect, useState } from 'react';
+import { MouseEventHandler, ReactNode, useContext, useEffect, useState, ElementType } from 'react';
 import { ThemeContext } from '../theme-context';
 import './card.css';
 
-export type CardProps = {
+export type CardProps<T extends ElementType = 'article'> = {
+    as?: T;
     children?: ReactNode;
     noPadding?: boolean;
     noBlur?: boolean;
@@ -13,46 +14,57 @@ export type CardProps = {
     onClick?: MouseEventHandler<HTMLElement>;
     className?: string;
     style?: React.CSSProperties;
-}
-export function Card({children, noPadding, noBlur = false, appearance = 'glass', color = 'neutral', intensity, dark = true, onClick, className, style}: CardProps){
-    
-    let [classNames, setClassNames] = useState("")
-    let [cardStyle, setCardStyle] = useState({})
-    const {theme} = useContext(ThemeContext)
-    
-    useEffect(() => {
+} & React.ComponentPropsWithoutRef<T>;
 
-        let intensityValue = intensity
-    
-        if (intensityValue === undefined){
+export function Card<T extends ElementType = 'article'>({
+    as,
+    children,
+    noPadding,
+    noBlur = false,
+    appearance = 'glass',
+    color = 'neutral',
+    intensity,
+    dark = true,
+    onClick,
+    className,
+    style,
+    ...rest
+}: CardProps<T>) {
+    const Component = as || 'article';
+
+    let [classNames, setClassNames] = useState("");
+    let [cardStyle, setCardStyle] = useState({});
+    const { theme } = useContext(ThemeContext);
+
+    useEffect(() => {
+        let intensityValue = intensity;
+
+        if (intensityValue === undefined) {
             intensityValue = theme === 'dark' ? 600 : 300;
         }
-    
+
         setCardStyle({
             "--glass-color": `var(--color-${color}-${intensityValue})`,
             "--card-text-color": `var(--color-${color}-${dark ? '100' : '800'})`,
             backdropFilter: appearance === 'glass' && !noBlur ? 'blur(10px)' : undefined,
-            ...style
+            ...style,
         });
 
-        let rounded = 'rounded-md'
+        let rounded = 'rounded-md';
 
-        if (className){
-            const roundedMatch = className.match(/rounded\-[a-z0-9]+/g)
-            if (roundedMatch){
-                rounded = roundedMatch[roundedMatch.length - 1]
+        if (className) {
+            const roundedMatch = className.match(/rounded\-[a-z0-9]+/g);
+            if (roundedMatch) {
+                rounded = roundedMatch[roundedMatch.length - 1];
             }
         }
 
-        setClassNames(`card ${rounded} ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`)
+        setClassNames(`card ${rounded} ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`);
+    }, [color, intensity, dark, appearance, noBlur, className, theme]);
 
-       
-    }, [color, intensity, dark, appearance, noBlur, className, theme])
-
-    return(
-        <article className={classNames} style={cardStyle} onClick={onClick}>
+    return (
+        <Component className={classNames} style={cardStyle} onClick={onClick} {...rest}>
             {children}
-        </article>
-    )
-
+        </Component>
+    );
 }

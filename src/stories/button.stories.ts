@@ -9,16 +9,25 @@ import { FaCircleRight } from "react-icons/fa6";
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
-  tags: ['autodocs']
+  parameters: {
+    docs: {
+      page: null,
+    },
+  }
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
+export const Default: Story = {
+  args: {
+    label: 'Default Button',
+  },
+};
 
 export const Appearance: Story = {
-  render: function DefaultCards() {
+  render: function Appearance() {
     return React.createElement(
         'div',
       {

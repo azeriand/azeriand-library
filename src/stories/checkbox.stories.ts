@@ -5,7 +5,6 @@ import { Checkbox } from '../components/checkbox/checkbox.tsx';
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
   component: Checkbox,
-  tags: ['autodocs']
 };
 
 export default meta;

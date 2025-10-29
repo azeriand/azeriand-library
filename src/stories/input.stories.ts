@@ -8,12 +8,17 @@ import { FaCircleRight } from "react-icons/fa6";
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
-  tags: ['autodocs']
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Input>;
+
+export const Default: Story = {
+  args: {
+    placeholder: 'Write text here...',
+  },
+};
 
 export const maxLenght: Story = {
   render: function DefaultInputs() {
@@ -92,11 +97,11 @@ export const CenterText: Story = {
       },
       React.createElement(
         Input,
-        { placeholder: 'Text not centered', size: 30, className:'mb-4'},
+        { placeholder: 'Text not centered', className:'w-[15rem] mb-4'},
       ),
       React.createElement(
         Input,
-        { placeholder: 'Text centered', size: 30, centerText: true, className:'mb-4' },
+        { placeholder: 'Text centered', size: 30, centerText: true, className:'w-[15rem] mb-4' },
       ),
     );
   },

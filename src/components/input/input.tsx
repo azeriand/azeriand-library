@@ -1,6 +1,5 @@
 import './input.css'
 import { Card, CardProps } from '../card/card'
-import { ChangeEventHandler } from 'react';
 
 export type InputProps = CardProps & {
     type?: string;
@@ -17,7 +16,7 @@ export type InputProps = CardProps & {
     style?: React.CSSProperties;
 }
 
-export function Input({type, value, disabled, placeholder, size, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}: InputProps){
+export function Input({type, value, disabled, placeholder, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}: InputProps){
     function inputUpdated(ev: React.ChangeEvent<HTMLInputElement>){
         onChange?.(ev.target.value)
     }
@@ -32,7 +31,7 @@ export function Input({type, value, disabled, placeholder, size, maxLength, onCh
     <div className={classnames}>
         <Card className={`flex justify-center items-center rounded-md ${className} ${icon ? directionClassName : ''}`} noBlur noPadding {...cardProps} style={cardProps.style}>
             { icon && <div className='flex items-center'>{ icon }</div> }
-            <input className={inputClassName} onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} size={size} maxLength={maxLength} style={cardProps.style}></input>
+            <input className={inputClassName} onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} maxLength={maxLength} style={cardProps.style}></input>
         </Card>
     </div>
     )

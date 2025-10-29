@@ -1,0 +1,46 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Calendar } from '../components/calendar/calendar';
+import * as CalendarStories from './calendar.stories';
+
+<Meta of={CalendarStories} />
+
+# Calendar Component
+
+The `Calendar` component is a versatile and customizable tool for displaying and selecting dates. It is designed to be flexible and visually appealing, making it suitable for a wide range of use cases.
+
+## Shared Props
+
+The `Calendar` component supports a range of props to customize its appearance and behavior. This ensures consistency and flexibility when integrating it into your designs.
+
+## Customization
+
+The `Calendar` component can be customized in various ways to suit your design needs:
+
+- **Selected Dates**: Use the `selectedDates` prop to specify an array of dates that should be highlighted as selected.
+- **Appearance**: Define the appearance of the calendar using the `appearance` prop. For example, `appearance="ghost"`.
+- **Styling**: You can apply custom styles to the `Calendar` component using the `style` prop or Tailwind classnames.
+
+These customization options allow you to create a wide range of styles, from simple to complex, while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Calendar } from 'azeriand-library';
+
+<Calendar 
+  selectedDates={[new Date(2023, 9, 5), new Date(2023, 9, 15)]} 
+  appearance="ghost" 
+/>
+```
+
+## Props
+
+<ArgTypes of={Calendar} />
+
+## Examples
+
+### Default Calendar
+
+This is the default configuration of the `Calendar` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={CalendarStories.Default} />

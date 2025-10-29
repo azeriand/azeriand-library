@@ -6,7 +6,11 @@ import goku2 from './assets/goku2.jpg'
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar',
   component: Avatar,
-  tags: ['autodocs']
+  parameters: {
+    docs: {
+      page: null,
+    },
+  }
 };
 
 export default meta;

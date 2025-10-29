@@ -1,0 +1,55 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Avatar } from '../components/avatar';
+import * as AvatarStories from './avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar Component
+
+The `Avatar` component is used to display user profile images or icons. It is a versatile and customizable component that can be styled to fit various design needs.
+
+## Shared Props
+
+The `Avatar` component supports props for customizing its appearance, including size, shape, and additional styles. This ensures flexibility when integrating it into different layouts.
+
+## Customization
+
+The `Avatar` component can be customized in various ways to suit your design needs:
+
+- **Custom Class**: Add custom classes using the `className` prop to apply additional styles.
+- **Inline Styles**: Use the `style` prop to apply inline styles directly to the component.
+- **Source**: Provide the image source using the `src` prop. This can be a URL or an imported image.
+
+These customization options allow you to create a wide range of styles while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Avatar } from 'azeriand-library';
+
+<Avatar src="./yourImage.jpg" className="rounded-full border" />
+```
+
+## Props
+
+<ArgTypes of={Avatar} />
+
+## Examples
+
+### Default Avatar
+
+This is the default configuration of the `Avatar` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={AvatarStories.Default} />
+
+### With Custom Class
+
+By using the `className` prop, you can apply custom classes to the `Avatar` component. This is useful for adding additional styles like borders or rounded corners.
+
+<Canvas of={AvatarStories.WithCustomClass} />
+
+### With Inline Style
+
+By using the `style` prop, you can apply inline styles directly to the `Avatar` component. This is useful for quick customizations without relying on external styles.
+
+<Canvas of={AvatarStories.WithInlineStyle} />

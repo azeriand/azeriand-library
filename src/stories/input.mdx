@@ -1,0 +1,67 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Input } from '../components/input/input';
+import * as InputStories from './input.stories';
+
+<Meta of={InputStories} />
+
+# Input Component
+
+The `Input` component is a versatile and customizable text input field. It supports various configurations, including icons, max length, centered text, and disabled states.
+
+## Customization
+
+The `Input` component can be customized in various ways to suit your design needs:
+
+- **Value** and **Placeholder**.
+- **Max Length**: Limit the number of characters a user can input using the `maxLength` prop.
+- **Icons**: Add icons to the input field using the `icon` and `iconPosition` props. Icons can be placed on the left or right side of the input.
+- **Centered Text**: Center the text within the input field using the `centerText` prop.
+- **Disabled State**: Disable the input field using the `disabled` prop, making it non-editable.
+
+These customization options allow you to create a wide range of input styles while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Input } from 'azeriand-library';
+
+<Input placeholder="Enter text here" maxLength={50} />
+```
+
+## Props
+
+<ArgTypes of={Input} />
+
+## Examples
+
+### Default
+
+<Canvas of={InputStories.Default} />
+
+
+### Max Length
+
+The `maxLength` prop limits the number of characters a user can input.
+
+<Canvas of={InputStories.maxLenght} />
+
+
+### With Icon
+
+The `icon` and `iconPosition` props allow you to add icons to the input field.
+
+<Canvas of={InputStories.WithIcon} />
+
+
+### Centered Text
+
+The `centerText` prop centers the text within the input field.
+
+<Canvas of={InputStories.CenterText} />
+
+
+### Disabled State
+
+The `disabled` prop disables the input field, making it non-editable.
+
+<Canvas of={InputStories.DisabledInput} />

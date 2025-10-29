@@ -1,0 +1,41 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { SectionName } from '../components/section-name/section-name';
+import * as SectionNameStories from './section-name.stories';
+
+<Meta of={SectionNameStories} />
+
+# SectionName Component
+
+The `SectionName` component is used to display a section title in your application. It provides a consistent and customizable way to define sections in your UI.
+
+## Shared Props
+
+The `SectionName` component supports props that allow you to customize its appearance and behavior. This ensures flexibility when integrating it into your design.
+
+## Customization
+
+The `SectionName` component can be customized in various ways to suit your design needs:
+
+- **Section**: Define the section name using the `section` prop. For example, `section="My Section"`.
+
+These customization options allow you to create a clear and structured layout while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { SectionName } from 'azeriand-library';
+
+<SectionName section="My Section" />
+```
+
+## Props
+
+<ArgTypes of={SectionName} />
+
+## Examples
+
+### Default SectionName
+
+This is the default configuration of the `SectionName` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={SectionNameStories.Default} />

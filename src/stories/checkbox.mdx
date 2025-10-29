@@ -1,0 +1,42 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Checkbox } from '../components/checkbox/checkbox';
+import * as CheckboxStories from './checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox Component
+
+The `Checkbox` component is a versatile input element that allows users to toggle between checked and unchecked states. It is commonly used in forms, settings, and other interactive interfaces.
+
+## Shared Props
+
+The `Checkbox` component supports a variety of props to customize its behavior and appearance. This ensures flexibility and consistency across different use cases.
+
+## Customization
+
+The `Checkbox` component can be customized in various ways to suit your design needs:
+
+- **Checked Default**: Use the `checkedDefault` prop to set the initial checked state of the checkbox. By default, it is set to `false`.
+- **Label**: Define the label text for the checkbox using the `label` prop. This makes the checkbox more accessible and user-friendly.
+
+These customization options allow you to create a wide range of styles and functionalities while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Checkbox } from 'azeriand-library';
+
+<Checkbox checkedDefault={false} label="Accept Terms" />
+```
+
+## Props
+
+<ArgTypes of={Checkbox} />
+
+## Examples
+
+### Default Checkbox
+
+This is the default configuration of the `Checkbox` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={CheckboxStories.Default} />

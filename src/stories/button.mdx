@@ -1,0 +1,81 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Button } from '../components/button/button';
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button Component
+
+The `Button` component is a versatile and customizable UI element. It supports various styles, sizes, and configurations to suit your design needs.
+
+## Shared Props
+
+The `Button` component inherits some props from the `Card` component, ensuring consistency and flexibility when customizing components.
+
+## Customization
+
+The `Button` component can be customized in various ways to suit your design needs:
+
+- **Label**: Define the text label of the button using the `label` prop.
+- **Appearance**: Define the appearance of the button using the `appearance` prop. Options include `ghost`, `mate`, and `outlined`.
+- **Size**: Adjust the size of the button using the `size` prop. Options include `sm` for small buttons.
+- **Icon**: Add an icon to the button using the `icon` prop. You can position the icon on the left or right using the `position` prop.
+- **No Padding**: Enable or disable the default padding using the `noPadding` prop.
+- **No Blur**: Enable or disable the glass-like blur effect using the `noBlur` prop.
+- **Color**: Define the primary color of the button using the `color` prop. For example, `color="blue"`.
+- **Intensity**: Adjust the intensity of the color using the `intensity` prop. Higher values create a more vivid appearance.
+- **Custom Styles**: Apply custom styles using the `style` prop or Tailwind classnames.
+
+These customization options allow you to create a wide range of styles, from subtle to bold, while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Button } from 'azeriand-library';
+
+<Button label="Click Me" color="blue" intensity={500} onClick={() => alert('Button clicked!')} />
+```
+
+## Props
+
+<ArgTypes of={Button} />
+
+## Examples
+
+### Default Button
+
+This is the default configuration of the `Button` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={ButtonStories.Default} />
+
+
+### Appearance
+
+The `Button` component can achieve different types of appearance by setting the `appearance` prop to `ghost`, `mate`, or `outlined`. This allows you to customize the visual style of the button to match your design requirements.
+
+<Canvas of={ButtonStories.Appearance} />
+
+
+### Custom Sizes
+
+The `Button` component supports different sizes. Use the `size` prop to adjust the size of the button.
+
+<Canvas of={ButtonStories.Size} />
+
+
+### With Icon and Position
+
+You can add an icon to the button using the `icon` prop. The icon can be positioned on the left or right using the `position` prop.
+
+<Canvas of={ButtonStories.IconAndPosition} />
+
+
+### Custom Colors and Intensity
+
+You can use any combination of color and intensity while using buttons.
+
+
+### Custom Styles
+
+You can apply custom styles to the `Button` component using the `style` prop or using Tailwind classnames. This allows you to override the default styles and add your own.
+

@@ -1,0 +1,43 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Tab } from '../components/tab/tab';
+import * as TabStories from './tab.stories';
+
+<Meta of={TabStories} />
+
+# Tab Component
+
+The `Tab` component is a navigation element that allows users to switch between different views or sections of content. It is commonly used in interfaces where content is organized into categories or steps.
+
+## Shared Props
+
+The `Tab` component shares common props with other navigation components in the library, ensuring consistency and flexibility when customizing components.
+
+## Customization
+
+The `Tab` component can be customized in various ways to suit your design needs:
+
+- **Items**: Define the list of tab items using the `items` prop. Each item represents a tab.
+- **Default Value**: Set the initially active tab using the `defaultValue` prop.
+- ** Styling**: Apply custom styles to the tabs using the `style` prop or Tailwind classnames.
+
+These customization options allow you to create tabs that fit a wide range of use cases, from simple navigation to complex workflows.
+
+## Usage
+
+```tsx
+import { Tab } from 'azeriand-library';
+
+<Tab items={['All', 'Active', 'Completed']} defaultValue="All" />
+```
+
+## Props
+
+<ArgTypes of={Tab} />
+
+## Examples
+
+### Default Tab
+
+This is the default configuration of the `Tab` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={TabStories.Default} />

@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "../src/styles/globals.css";
+import "./storybook.css";
 import { ThemeContextComponent } from "../src/components/theme-context";
 import { Theme } from "@emotion/react";
 import { themes } from "@storybook/theming";

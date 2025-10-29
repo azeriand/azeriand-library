@@ -1,0 +1,47 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { NewSlider } from '../components/slider/slider';
+import * as SliderStories from './slider.stories';
+
+<Meta of={SliderStories} />
+
+# Slider Component
+
+The `Slider` component is a versatile input control that allows users to select a value or range of values by dragging a handle along a track. It is commonly used in forms, settings, and other user interfaces where precise value selection is required.
+
+## Shared Props
+
+The `Slider` component shares common props with other input components in the library, ensuring consistency and flexibility when customizing components.
+
+## Customization
+
+The `Slider` component can be customized in various ways to suit your design needs:
+
+- **Default Value**: Set the initial value of the slider using the `defaultValue` prop.
+- **Min and Max**: Define the range of the slider using the `min` and `max` props.
+- **Step**: Specify the increment between values using the `step` prop.
+- **Orientation**: Set the orientation of the slider to `horizontal` or `vertical` using the `orientation` prop.
+- **Disabled**: Disable the slider using the `disabled` prop to prevent user interaction.
+
+These customization options allow you to create sliders that fit a wide range of use cases, from simple value selection to complex range adjustments.
+
+## Usage
+
+```tsx
+import { NewSlider } from 'azeriand-library';
+
+<NewSlider defaultValue={30} min={0} max={100} step={1} />
+```
+
+## Props
+
+<ArgTypes of={NewSlider} />
+
+## Examples
+
+### Default Slider
+
+This is the default configuration of the `Slider` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={SliderStories.Default} />
+
+

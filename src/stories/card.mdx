@@ -1,0 +1,80 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Card } from '../components/card/card'
+import * as CardStories from './card.stories';
+
+<Meta of={CardStories} />
+
+# Card Component
+
+The `Card` component is the backbone of this library. Most components use `Card` as a container to achieve the signature glass-like appearance that defines the library's style.
+
+## Shared Props
+
+Almost every component in this library inherit the same props as the `Card` component. This ensures consistency and flexibility when customizing components.
+
+## Customization
+
+The `Card` component can be customized in various ways to suit your design needs:
+
+- **No Padding**: Enable or disable the default padding using the `noPadding` prop. By default, the padding effect is enabled with a value of `2 rem`.
+- **No Blur**: Enable or disable the glass-like blur effect using the `noBlur` prop. By default, the blur effect is enabled.
+- **Appereance**: Define the appereance of the card using the `appereance` prop. The options are: `ghost`, `mate` and `outlined`. If **appearance** prop is not defined, it will use the default appereance of card.
+- **Color**: Define the primary color of the card using the `color` prop. For example, `color="blue"`.
+- **Intensity**: Adjust the intensity of the color using the `intensity` prop. Higher values create a more vivid appearance.
+
+These customization options allow you to create a wide range of styles, from subtle to bold, while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Card } from 'azeriand-library';
+
+<Card appearance="ghost" color="blue" intensity={500}>
+  Your content here
+</Card>
+```
+
+## Props
+
+<ArgTypes of={Card} />
+
+## Examples
+
+
+### Default Card
+
+This is the default configuration of the `Card` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={CardStories.Default} />
+
+
+### No Padding
+
+By using the `noPadding` prop, you can remove the default padding from the `Card` component. This is useful when you want to have full control over the content's spacing.
+
+<Canvas of={CardStories.NoPadding} />
+
+
+
+### No Blur
+
+By using the `noBlur` prop, you can remove the default blur from the `Card` component.
+<Canvas of={CardStories.NoBlur} />
+
+### Appearance
+
+The `Card` component can achieve different types of appearance by setting the `appearance` prop to `ghost`, `mate` or `outlined`.
+
+<Canvas of={CardStories.Appearance} />
+
+
+### Custom Colors and Intensity
+
+You can use any combination of color and intensity while using cards.
+
+<Canvas of={CardStories.ColorAndIntensity} />
+
+
+### Custom Styles
+
+You can apply custom styles to the `Card` component using the `style` prop or using Tailwind classnames. This allows you to override the default styles and add your own.

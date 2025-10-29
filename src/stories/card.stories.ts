@@ -6,7 +6,11 @@ import { Card } from '../components/card/card'
 const meta: Meta<typeof Card> = {
   title: 'Components/Card',
   component: Card,
-  tags: ['autodocs']
+    parameters: {
+    docs: {
+      page: null,
+    },
+  }
 };
 
 export default meta;
@@ -14,8 +18,31 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 
-export const Appearance: Story = {
+export const Default: Story = {
   render: function DefaultCards() {
+    return React.createElement(
+        'div',
+      {
+        style: {
+          backgroundImage: "url(/background.jpg)",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: 32,
+          minHeight: 400,
+        }
+      },
+      React.createElement(
+        Card,
+         { style: { marginBottom: 16 } },
+        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
+        React.createElement('p', null, 'This is the default card.')
+      ),
+    )
+  }
+}
+
+export const Appearance: Story = {
+  render: function AppearanceCards() {
     return React.createElement(
         'div',
       {
@@ -37,7 +64,7 @@ export const Appearance: Story = {
         Card,
         { style: { marginBottom: 16 } },
         React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is a card with default appearance.')
+        React.createElement('p', null, 'This is the default card.')
       ),
       React.createElement(
         Card,
@@ -71,33 +98,15 @@ export const NoPadding: Story = {
       },
       React.createElement(
         Card,
-        { appearance: 'mate', style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Mate Card'),
-        React.createElement('p', null, 'This is a default mate card.')
-      ),
-      React.createElement(
-        Card,
-        { appearance: 'mate', noPadding: true, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'NoPadding Mate Card'),
-        React.createElement('p', null, 'This is a mate default card with no padding.')
+        { style: { marginBottom: 16 } },
+        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
+        React.createElement('p', null, 'This is the default card.')
       ),
       React.createElement(
         Card,
         { noPadding: true, style: { marginBottom: 16 } },
         React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'NoPadding Default Card'),
-        React.createElement('p', null, 'This is a default card with no padding.')
-      ),
-      React.createElement(
-        Card,
-        { appearance: 'outlined', noPadding: true, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'NoPadding Outlined Card'),
-        React.createElement('p', null, 'This is a outlined card with no padding.')
-      ),
-      React.createElement(
-        Card,
-        { appearance: 'ghost', noPadding: true, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'NoPadding Ghost Card'),
-        React.createElement('p', null, 'This is a ghost card with no padding.')
+        React.createElement('p', null, 'This is a card with no padding prop.')
       ),
     );
   },
@@ -121,7 +130,7 @@ export const NoBlur: Story = {
         Card,
         { style: { marginBottom: 16 } },
         React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is a default card.')
+        React.createElement('p', null, 'This is the default card.')
       ),
       React.createElement(
         Card,
@@ -150,7 +159,7 @@ export const ColorAndIntensity: Story = {
         Card,
         { style: { marginBottom: 16 } },
         React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is a default card.')
+        React.createElement('p', null, 'This is the default card.')
       ),
       React.createElement(
         Card,

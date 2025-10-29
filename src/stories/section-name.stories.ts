@@ -5,7 +5,6 @@ import { SectionName } from '../components/section-name/section-name';
 const meta: Meta<typeof SectionName> = {
   title: 'Components/SectionName',
   component: SectionName,
-  tags: ['autodocs']
 };
 
 export default meta;

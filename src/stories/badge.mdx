@@ -1,0 +1,50 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Badge } from '../components/badge/badge';
+import * as BadgeStories from './badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge Component
+
+The `Badge` component is a versatile UI element used to highlight or categorize content. It is commonly used to display statuses, labels, or counts in a visually distinct manner.
+
+## Shared Props
+
+The `Badge` component supports a variety of props to customize its appearance and behavior. These props ensure flexibility and consistency across different use cases.
+
+## Customization
+
+The `Badge` component can be customized in various ways to suit your design needs:
+
+- **Size**: Adjust the size of the badge using the `size` prop. Options include `sm`, `md`, and `lg`. The default size is `md`.
+- **Color**: Define the color of the badge using the `color` prop. For example, `color="gray"`.
+- **Label**: Set the text displayed inside the badge using the `label` prop.
+
+These customization options allow you to create badges that fit seamlessly into your design system.
+
+## Usage
+
+```tsx
+import { Badge } from 'azeriand-library';
+
+<Badge size="md" color="gray" label="Success" />
+```
+
+## Props
+
+<ArgTypes of={Badge} />
+
+## Examples
+
+### Default Badge
+
+This is the default configuration of the `Badge` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={BadgeStories.Default} />
+
+### Size
+
+By using the `size` prop, you can adjust the size of the badge, to make it suitable for differents layouts.
+
+<Canvas of={BadgeStories.Size} />
+

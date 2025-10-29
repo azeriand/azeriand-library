@@ -1,0 +1,75 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Timeline } from '../components/timeline/timeline';
+import { TlListItem } from '../components/timeline/timeline-list-item';
+import * as TimelineStories from './timeline.stories';
+import * as TimelineListItemStories from './timeline-list-item.stories';
+
+<Meta of={TimelineStories} />
+
+# Timeline and ListItem Components
+
+The `Timeline` and `TimelineListItem` components are versatile tools for displaying a sequence of events or steps in a visually appealing and organized manner. They are designed to be flexible and customizable to suit various use cases.
+
+## Shared Props
+
+### Timeline
+
+The `Timeline` component supports a range of props to customize its appearance and behavior. This ensures consistency and flexibility when integrating it into your designs.
+
+### TimelineListItem
+
+The `TimelineListItem` component represents an individual item in the timeline. It supports the following props:
+
+- **Label**: The `label` prop specifies the text for the timeline item.
+
+## Customization
+
+### Timeline
+
+The `Timeline` component can be customized in various ways to suit your design needs:
+
+- **Children**: The `Timeline` component accepts `TlListItem` components as children to define individual timeline items.
+- **Styling**: You can apply custom styles to the `Timeline` component using the `style` prop or Tailwind classnames.
+
+### TimelineListItem
+
+The `TimelineListItem` component can be customized using the `label` prop to define the text content of the item. Additional styles can be applied using the `style` prop or Tailwind classnames.
+
+These customization options allow you to create a wide range of styles, from simple to complex, while maintaining the library's cohesive design language.
+
+## Usage
+
+```tsx
+import { Timeline } from 'azeriand-library';
+import { TlListItem } from 'azeriand-library';
+
+<Timeline>
+  <TlListItem label="Timeline Item 1" />
+  <TlListItem label="Timeline Item 2" />
+  <TlListItem label="Timeline Item 3" />
+</Timeline>
+```
+
+## Props
+
+### Timeline
+
+<ArgTypes of={Timeline} />
+
+### TimelineListItem
+
+<ArgTypes of={TlListItem} />
+
+## Examples
+
+### Default Timeline
+
+This is the default configuration of the `Timeline` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={TimelineStories.Default} />
+
+### Default TimelineListItem
+
+This is the default configuration of the `TimelineListItem` component. It demonstrates the basic appearance and functionality with the `label` prop.
+
+<Canvas of={TimelineListItemStories.Default} />

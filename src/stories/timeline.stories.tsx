@@ -6,7 +6,6 @@ import { TlListItem } from '../components/timeline/timeline-list-item';
 const meta: Meta<typeof Timeline> = {
   title: 'Components/Timeline',
   component: Timeline,
-  tags: ['autodocs']
 };
 
 export default meta;

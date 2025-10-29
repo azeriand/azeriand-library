@@ -1,0 +1,46 @@
+import { Story, Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Dropdown } from '../components/dropdown/dropdown';
+import * as DropdownStories from './dropdown.stories';
+
+<Meta of={DropdownStories} />
+
+# Dropdown Component
+
+The `Dropdown` component allows users to select an option from a list of predefined choices. It is a versatile and customizable component suitable for various use cases.
+
+## Shared Props
+
+The `Dropdown` component comes with a set of shared props that make it flexible and easy to use in different scenarios.
+
+## Customization
+
+The `Dropdown` component can be customized in various ways to suit your design needs:
+
+- **Button Text**: Define the text displayed on the dropdown button using the `buttonText` prop. For example, `buttonText="Select an option"`.
+- **Options**: Provide an array of options to display in the dropdown using the `options` prop. For example, `options={["Option 1", "Option 2", "Option 3"]}`.
+- **Custom Styles**: Apply custom styles to the dropdown using the `style` prop or Tailwind classnames.
+
+These customization options allow you to create a dropdown that fits seamlessly into your design.
+
+## Usage
+
+```tsx
+import { Dropdown } from 'azeriand-library';
+
+<Dropdown 
+  buttonText="Select an option" 
+  options={["Option 1", "Option 2", "Option 3"]} 
+/>
+```
+
+## Props
+
+<ArgTypes of={Dropdown} />
+
+## Examples
+
+### Default Dropdown
+
+This is the default configuration of the `Dropdown` component. It demonstrates the basic appearance and functionality without any additional props.
+
+<Canvas of={DropdownStories.Default} />

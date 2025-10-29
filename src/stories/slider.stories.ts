@@ -5,7 +5,6 @@ import { NewSlider } from '../components/slider/slider';
 const meta: Meta<typeof NewSlider> = {
   title: 'Components/NewSlider',
   component: NewSlider,
-  tags: ['autodocs']
 };
 
 export default meta;

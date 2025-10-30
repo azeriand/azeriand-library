@@ -17,6 +17,11 @@ const preview: Preview = {
   parameters: {
     docs: {
       theme: themes.dark,
+      options: {
+        showPanel: false,
+        // deshabilitar welcome page
+
+      },
     },
     controls: {
       matchers: {

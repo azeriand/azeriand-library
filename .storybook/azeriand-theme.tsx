@@ -6,7 +6,7 @@ export default create({
   // Branding
   brandTitle: "Azeriand's Library",
   brandUrl: 'https://library.andrearc.com',
-  brandImage: '/public/azeriand.png',
+  brandImage: 'https://library.andrearc.com/azeriand.png',
   brandTarget: '_self',
 
   // Typography

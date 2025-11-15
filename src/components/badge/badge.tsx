@@ -7,7 +7,7 @@ type BadgeProps = CardProps & {
 
 export function Badge({label, size, ...cardProps}: BadgeProps){
 
-    let cardClassNames = 'rounded-md'
+    let cardClassNames = 'rounded-md cursor-default'
     let divClassNames = 'px-1.5 py-0.5 text-[0.85rem]'
 
     if (size === 'sm'){

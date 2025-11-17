@@ -8,6 +8,7 @@ export type CardProps<T extends ElementType = 'article'> = {
     noPadding?: boolean;
     noBlur?: boolean;
     appearance?: string;
+    blur?: number
     color?: string;
     intensity?: number;
     dark?: boolean;
@@ -22,6 +23,7 @@ export function Card<T extends ElementType = 'article'>({
     noPadding,
     noBlur = false,
     appearance = 'glass',
+    blur = 10,
     color = 'neutral',
     intensity,
     dark = true,
@@ -46,7 +48,7 @@ export function Card<T extends ElementType = 'article'>({
         setCardStyle({
             "--glass-color": `var(--color-${color}-${intensityValue})`,
             "--card-text-color": `var(--color-${color}-${dark ? '100' : '800'})`,
-            backdropFilter: appearance === 'glass' && !noBlur ? 'blur(10px)' : undefined,
+            backdropFilter: appearance === 'glass' && !noBlur ? `blur(${blur}px)` : undefined,
             ...style,
         });
 

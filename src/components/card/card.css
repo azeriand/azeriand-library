@@ -5,7 +5,6 @@
 
 .card.glass{
     background-color: color-mix(in oklch, var(--glass-color), transparent 80%);
-    border: 1px solid color-mix(in oklch, var(--glass-color), transparent 40%);
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
     -webkit-transform: translate3d(0,0,0);
@@ -21,7 +20,7 @@
 }
 
 .card.outlined{
-    border: solid white 2px;
+    border: 2px solid color-mix(in oklch, var(--glass-color), transparent 40%);
 }
 
 button .card.ghost:hover, button .card.outlined:hover{

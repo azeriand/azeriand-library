@@ -19,10 +19,9 @@ export function Checkbox({label, checkedDefault = false, onChange} : CheckboxPro
     }
 
     return(
-        <div className='flex items-center gap-0.5 w-fit' onClick={checkboxClicked}>
-                <Button icon={checked ? <FaCheck/> : null }>
-                </Button>
-                {label}
+        <div className='flex items-center gap-[0.5rem]' onClick={checkboxClicked}>
+            <Button icon={checked ? <FaCheck/> : null } className='min-w-[2rem] min-h-[2rem]'/>
+            {label}
         </div>
     )
 }

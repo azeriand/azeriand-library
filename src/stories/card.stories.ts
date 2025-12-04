@@ -1,16 +1,51 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from '../components/card/card'
+import { Card } from '../components/card/card';
 
 // @ts-ignore
 const meta: Meta<typeof Card> = {
   title: 'Components/Card',
   component: Card,
-    parameters: {
+  parameters: {
     docs: {
       page: null,
     },
-  }
+  },
+  argTypes: {
+    noPadding: {
+      control: 'boolean',
+    },
+    noBlur: {
+      control: 'boolean',
+    },
+    appearance: {
+      control: 'select',
+      options: ['glass', 'mate', 'outlined', 'ghost'],
+    },
+    color: {
+      control: 'select',
+      options: ['neutral', 'purple', 'blue', 'green', 'yellow', 'red', 'pink', 'cyan', 'teal', 'orange', 'lime'],
+    },
+    intensity: {
+      control: 'select',
+      options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    },
+    blur: {
+      control: 'number',
+    },
+    dark: {
+      control: 'boolean',
+    },
+    onClick: {
+      action: 'clicked',
+    },
+    className: {
+      control: 'text',
+    },
+    style: {
+      control: 'object',
+    },
+  },
 };
 
 export default meta;

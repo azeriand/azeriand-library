@@ -54,9 +54,17 @@ type Story = StoryObj<typeof Card>;
 
 
 export const Default: Story = {
-  render: function DefaultCards() {
+  args: {
+    children: React.createElement(
+      React.Fragment,
+      null,
+      React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
+      React.createElement('p', null, 'This is the default card.')
+    ),
+  },
+  render: (args) => {
     return React.createElement(
-        'div',
+      'div',
       {
         style: {
           backgroundImage: "url(/background.jpg)",
@@ -66,20 +74,24 @@ export const Default: Story = {
           minHeight: 400,
         }
       },
-      React.createElement(
-        Card,
-         { style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is the default card.')
-      ),
+      React.createElement(Card, args)
     )
   }
 }
 
 export const Appearance: Story = {
-  render: function AppearanceCards() {
+  args: {
+    appearance: 'mate',
+    children: React.createElement(
+      React.Fragment,
+      null,
+      React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Card with Appearance'),
+      React.createElement('p', null, 'Change the appearance control to see different styles.')
+    ),
+  },
+  render: (args) => {
     return React.createElement(
-        'div',
+      'div',
       {
         style: {
           backgroundImage: "url(/background.jpg)",
@@ -89,37 +101,23 @@ export const Appearance: Story = {
           minHeight: 400,
         }
       },
-      React.createElement(
-        Card,
-        { appearance: 'mate', style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Mate Card'),
-        React.createElement('p', null, 'This is a card with mate appearance.')
-      ),
-      React.createElement(
-        Card,
-        { style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is the default card.')
-      ),
-      React.createElement(
-        Card,
-        { appearance: 'outlined' },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Outlined Card'),
-        React.createElement('p', null, 'This is a card with outlined appearance.')
-      ),
-      React.createElement(
-        Card,
-        { appearance: 'ghost' },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Ghost Card'),
-        React.createElement('p', null, 'This is a card with ghost appearance.')
-      )
+      React.createElement(Card, args)
     );
   },
 };
 
 
 export const NoPadding: Story = {
-  render: function NoPaddingCards() {
+  args: {
+    noPadding: true,
+    children: React.createElement(
+      React.Fragment,
+      null,
+      React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Card with No Padding'),
+      React.createElement('p', null, 'Toggle noPadding control to see the difference.')
+    ),
+  },
+  render: (args) => {
     return React.createElement(
       'div',
       {
@@ -131,25 +129,23 @@ export const NoPadding: Story = {
           minHeight: 400,
         }
       },
-      React.createElement(
-        Card,
-        { style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is the default card.')
-      ),
-      React.createElement(
-        Card,
-        { noPadding: true, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'NoPadding Default Card'),
-        React.createElement('p', null, 'This is a card with no padding prop.')
-      ),
+      React.createElement(Card, args)
     );
   },
 };
 
 
 export const NoBlur: Story = {
-  render: function NoPaddingCards() {
+  args: {
+    noBlur: true,
+    children: React.createElement(
+      React.Fragment,
+      null,
+      React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Card with No Blur'),
+      React.createElement('p', null, 'Toggle noBlur control to see the backdrop blur effect.')
+    ),
+  },
+  render: (args) => {
     return React.createElement(
       'div',
       {
@@ -161,24 +157,23 @@ export const NoBlur: Story = {
           minHeight: 400,
         }
       },
-      React.createElement(
-        Card,
-        { style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is the default card.')
-      ),
-      React.createElement(
-        Card,
-        { noBlur: true, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'NoBlur Default Card'),
-        React.createElement('p', null, 'This is a default card with no blur.')
-      ),
+      React.createElement(Card, args)
     );
   },
 };
 
 export const ColorAndIntensity: Story = {
-  render: function NoPaddingCards() {
+  args: {
+    color: 'purple',
+    intensity: 600,
+    children: React.createElement(
+      React.Fragment,
+      null,
+      React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Card with Color & Intensity'),
+      React.createElement('p', null, 'Change color and intensity controls to see different combinations.')
+    ),
+  },
+  render: (args) => {
     return React.createElement(
       'div',
       {
@@ -190,36 +185,7 @@ export const ColorAndIntensity: Story = {
           minHeight: 400,
         }
       },
-      React.createElement(
-        Card,
-        { style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Default Card'),
-        React.createElement('p', null, 'This is the default card.')
-      ),
-      React.createElement(
-        Card,
-        { color: 'purple', intensity: 200, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Purple Card Intensity 200'),
-        React.createElement('p', null, 'This is a purple card with an intensity value of 200.')
-      ),
-      React.createElement(
-        Card,
-        { color: 'purple', intensity: 400, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Purple Card Intensity 400'),
-        React.createElement('p', null, 'This is a purple card with an intensity value of 400.')
-      ),
-      React.createElement(
-        Card,
-        { color: 'purple', intensity: 600, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Purple Card Intensity 600'),
-        React.createElement('p', null, 'This is a purple card with an intensity value of 600.')
-      ),
-      React.createElement(
-        Card,
-        { color: 'purple', intensity: 800, style: { marginBottom: 16 } },
-        React.createElement('h3', { className: 'font-bold text-lg mb-2' }, 'Purple Card Intensity 800'),
-        React.createElement('p', null, 'This is a purple card with an intensity value of 800.')
-      ),  
+      React.createElement(Card, args)
     );
   },
 };

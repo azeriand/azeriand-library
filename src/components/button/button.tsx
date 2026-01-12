@@ -24,10 +24,10 @@ export function Button({children, label, icon, position='left', onClick, size, c
     let defaultCardClassNames = 'flex justify-center items-center gap-x-[0.40rem] box-border cursor-pointer w-fit '
     
     
-    let specificCardClassNames = 'min-w-[2.5rem] px-[1rem] py-1'
+    let specificCardClassNames = 'min-w-[2.5rem] px-4 py-2.5'
 
     if (size === 'sm'){
-        specificCardClassNames = 'min-w-auto text-xs px-[0.5rem] py-1'
+        specificCardClassNames = 'min-w-auto text-xs px-2.5 py-1.5'
         className = `${className}`
     }
 

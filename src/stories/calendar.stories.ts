@@ -14,6 +14,6 @@ type Story = StoryObj<typeof Calendar>;
 export const Default: Story = {
   args: {
     selectedDates: [new Date(2023, 9, 5), new Date(2023, 9, 15), new Date(2023, 9, 25)],
-    appearance: 'ghost',
+    appearance: 'outlined',
   },
 };

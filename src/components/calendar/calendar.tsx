@@ -43,7 +43,7 @@ export function Calendar({ selectedDates, ...cardProps }: { selectedDates?: Date
     });
 
     return (
-        <Card appearance={cardProps.appearance ?? 'ghost'} noPadding {...cardProps}>
+        <Card appearance={cardProps.appearance ?? 'ghost'} noPadding {...cardProps} className="w-fit px-5 pt-7">
             <ThemeProvider theme={theme}>
                 <DateCalendar
                     slots={{ day: CustomDay }}

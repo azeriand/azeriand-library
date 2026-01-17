@@ -1,6 +1,6 @@
 {
   "name": "azeriand-library",
-  "version": "1.14.4-revision-8",
+  "version": "1.17.0",
   "description": "A React component library with Tailwind CSS",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -27,6 +27,9 @@
   ],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"

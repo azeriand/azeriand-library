@@ -22,9 +22,9 @@ export function Card<T extends ElementType = 'article'>({
     children,
     noPadding,
     noBlur = false,
-    appearance = 'glass',
+    appearance,
     blur = 10,
-    color = 'neutral',
+    color,
     intensity,
     dark = true,
     onClick,
@@ -36,19 +36,26 @@ export function Card<T extends ElementType = 'article'>({
 
     let [classNames, setClassNames] = useState("");
     let [cardStyle, setCardStyle] = useState({});
-    const { theme } = useContext(ThemeContext);
+    const { theme, cardDefaults } = useContext(ThemeContext);
+
+    const mergedProps = {
+        appearance: appearance || cardDefaults.appearance,
+        color: color || cardDefaults.color,
+        intensity: intensity || cardDefaults.intensity,
+        dark: dark !== undefined ? dark : cardDefaults.theme,
+    };
 
     useEffect(() => {
-        let intensityValue = intensity;
+        let intensityValue = mergedProps.intensity;
 
         if (intensityValue === undefined) {
             intensityValue = theme === 'dark' ? 600 : 300;
         }
 
         setCardStyle({
-            "--glass-color": `var(--color-${color}-${intensityValue})`,
-            "--card-text-color": `var(--color-${color}-${dark ? '100' : '800'})`,
-            backdropFilter: appearance === 'glass' && !noBlur ? `blur(${blur}px)` : undefined,
+            "--glass-color": `var(--color-${mergedProps.color}-${intensityValue})`,
+            "--card-text-color": `var(--color-${mergedProps.color}-${mergedProps.dark ? '100' : '800'})`,
+            backdropFilter: mergedProps.appearance === 'glass' && !noBlur ? `blur(${blur}px)` : undefined,
             ...style,
         });
 
@@ -61,7 +68,7 @@ export function Card<T extends ElementType = 'article'>({
             }
         }
 
-        setClassNames(`card ${rounded} ${appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`);
+        setClassNames(`card ${rounded} ${mergedProps.appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`);
     }, [color, intensity, dark, appearance, noBlur, className, theme]);
 
     return (

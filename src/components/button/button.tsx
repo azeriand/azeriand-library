@@ -44,6 +44,10 @@ export function Button({children, label, icon, position='left', onClick, size, c
         }
     }
 
+    if (true){
+        cardClassNames += 'hoverable '
+    }
+
     const buttonClick: MouseEventHandler<HTMLButtonElement> = (ev) => {
         if (typeof onClick === 'function') { 
             onClick(ev)

@@ -15,6 +15,11 @@
     transform: translateZ(0);
 }
 
+.card.glass.hoverable:hover {
+    background-color: color-mix(in oklch, var(--glass-color), transparent 40%);
+    box-shadow: 0 4px 10px color-mix(in oklch, var(--glass-color), transparent 85%);
+}
+
 .card.mate{
     background-color: var(--glass-color);
 }
@@ -23,14 +28,10 @@
     border: 2px solid color-mix(in oklch, var(--glass-color), transparent 40%);
 }
 
-button .card.ghost:hover, button .card.outlined:hover{
+.card.ghost.hoverable:hover, .card.outlined.hoverable:hover{
     background: color-mix(in oklch, var(--glass-color), transparent 80%);
 }
 
-button .card.glass:hover{
-    box-shadow: 0 4px 10px color-mix(in oklch, var(--glass-color), transparent 85%);
-}
-
-button .card.mate:hover{
+.card.mate.hoverable:hover{
     background-color: color-mix(in oklch, var(--glass-color), white 10%) 
 }

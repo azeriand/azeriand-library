@@ -14,6 +14,18 @@ type Story = StoryObj<typeof Timeline>;
 
 export const Default: Story = {
   args: {
+    faded: false,
+    children: [
+      <TlListItem label="Timeline Item 1" />,
+      <TlListItem label="Timeline Item 2" />,
+      <TlListItem label="Timeline Item 3"/>,
+    ],
+  },
+};
+
+export const Faded: Story = {
+  args: {
+    faded: true,
     children: [
       <TlListItem label="Timeline Item 1" />,
       <TlListItem label="Timeline Item 2" />,

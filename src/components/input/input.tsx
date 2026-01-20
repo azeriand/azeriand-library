@@ -23,9 +23,9 @@ export function Input({type, value, disabled, placeholder, maxLength, onChange, 
 
     const classnames = `flex`
 
-    const inputClassName=`flex justify-center items-center border-none bg-transparent py-[0.5rem] px-[1rem] m-0 w-full ${centerText ? 'text-center' : ''}`
+    const inputClassName=`flex justify-center items-center border-none bg-transparent py-[0.5rem] ${iconPosition && icon? 'px-[0.5rem]' : 'px-[1rem]'} m-0 w-full ${centerText ? 'text-center' : ''}`
 
-    const directionClassName = iconPosition === 'left' ? 'pl-2' : 'flex-row-reverse pr-2'
+    const directionClassName = iconPosition === 'left' ? 'pl-3' : 'flex-row-reverse pr-3'
 
     return(
     <div className={classnames}>

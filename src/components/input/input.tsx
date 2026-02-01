@@ -21,18 +21,14 @@ export function Input({type, value, disabled, placeholder, maxLength, onChange, 
         onChange?.(ev.target.value)
     }
 
-    const classnames = `flex`
-
     const inputClassName=`flex justify-center items-center border-none bg-transparent py-[0.5rem] ${iconPosition && icon? 'px-[0.5rem]' : 'px-[1rem]'} m-0 w-full ${centerText ? 'text-center' : ''}`
 
     const directionClassName = iconPosition === 'left' ? 'pl-3' : 'flex-row-reverse pr-3'
 
     return(
-    <div className={classnames}>
         <Card className={`flex justify-center items-center rounded-md ${className} ${icon ? directionClassName : ''}`} noBlur noPadding {...cardProps} style={cardProps.style}>
             { icon && <div className='flex items-center'>{ icon }</div> }
             <input className={inputClassName} onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} maxLength={maxLength} style={cardProps.style}></input>
         </Card>
-    </div>
     )
 }

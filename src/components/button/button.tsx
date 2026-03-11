@@ -21,7 +21,7 @@ type ButtonProps = {
 
 export function Button({children, label, icon, position='left', onClick, size, className, ...cardProps} : ButtonProps){
 
-    let defaultCardClassNames = 'flex justify-center items-center gap-x-[0.40rem] box-border cursor-pointer w-fit '
+    let defaultCardClassNames = 'flex justify-center items-center align-middle gap-x-[0.40rem] box-border cursor-pointer w-fit'
     
     
     let specificCardClassNames = 'min-w-[2.5rem] px-4 py-2.5'

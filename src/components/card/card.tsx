@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode, useContext, useEffect, useState, ElementType } from 'react';
+import { MouseEventHandler, ReactNode, useContext, ElementType } from 'react';
 import { ThemeContext } from '../theme-context';
 import './card.css';
 
@@ -33,9 +33,6 @@ export function Card<T extends ElementType = 'article'>({
     ...rest
 }: CardProps<T>) {
     const Component = as || 'article';
-
-    let [classNames, setClassNames] = useState("");
-    let [cardStyle, setCardStyle] = useState({});
     const { theme, cardDefaults } = useContext(ThemeContext);
 
     const mergedProps = {
@@ -45,31 +42,31 @@ export function Card<T extends ElementType = 'article'>({
         dark: dark !== undefined ? dark : cardDefaults.theme,
     };
 
-    useEffect(() => {
-        let intensityValue = mergedProps.intensity;
+    let intensityValue = mergedProps.intensity;
+    if (intensityValue === undefined) {
+        intensityValue = theme === 'dark' ? 600 : 300;
+    }
 
-        if (intensityValue === undefined) {
-            intensityValue = theme === 'dark' ? 600 : 300;
+    const cardStyle: React.CSSProperties = {
+        ...(style || {}),
+    } as React.CSSProperties;
+
+    (cardStyle as any)['--glass-color'] = `var(--color-${mergedProps.color}-${intensityValue})`;
+    (cardStyle as any)['--card-text-color'] = `var(--color-${mergedProps.color}-${mergedProps.dark ? '100' : '800'})`;
+    if (mergedProps.appearance === 'glass' && !noBlur) {
+        cardStyle.backdropFilter = `blur(${blur}px)`;
+    }
+
+    let rounded = 'rounded-md';
+
+    if (className) {
+        const roundedMatch = className.match(/rounded\-[a-z0-9]+/g);
+        if (roundedMatch) {
+            rounded = roundedMatch[roundedMatch.length - 1];
         }
+    }
 
-        setCardStyle({
-            "--glass-color": `var(--color-${mergedProps.color}-${intensityValue})`,
-            "--card-text-color": `var(--color-${mergedProps.color}-${mergedProps.dark ? '100' : '800'})`,
-            backdropFilter: mergedProps.appearance === 'glass' && !noBlur ? `blur(${blur}px)` : undefined,
-            ...style,
-        });
-
-        let rounded = 'rounded-md';
-
-        if (className) {
-            const roundedMatch = className.match(/rounded\-[a-z0-9]+/g);
-            if (roundedMatch) {
-                rounded = roundedMatch[roundedMatch.length - 1];
-            }
-        }
-
-        setClassNames(`card ${rounded} ${mergedProps.appearance} ${className} ${noPadding ? '' : 'p-[2rem]'}`);
-    }, [color, intensity, dark, appearance, noBlur, className, theme]);
+    const classNames = `card ${rounded} ${mergedProps.appearance} ${className || ''} ${noPadding ? '' : 'p-[2rem]'}`.trim();
 
     return (
         <Component className={classNames} style={cardStyle} onClick={onClick} {...rest}>

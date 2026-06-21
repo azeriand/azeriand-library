@@ -16,19 +16,30 @@ export type InputProps = CardProps & {
     style?: React.CSSProperties;
 }
 
-export function Input({type, value, disabled, placeholder, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}: InputProps){
+export function Input({type = 'text', value, disabled, placeholder, maxLength, onChange, iconPosition='left', centerText=false, icon, className, ...cardProps}: InputProps){
     function inputUpdated(ev: React.ChangeEvent<HTMLInputElement>){
         onChange?.(ev.target.value)
     }
 
-    const inputClassName=`flex justify-center items-center border-none bg-transparent py-[0.5rem] ${iconPosition && icon? 'px-[0.5rem]' : 'px-[1rem]'} m-0 w-full ${centerText ? 'text-center' : ''}`
+    const normalizedValue = value ?? ''
+
+    const inputClassName=`flex justify-center items-center border-none bg-transparent py-[0.5rem] ${icon && iconPosition ? 'px-[0.5rem]' : 'px-[1rem]'} m-0 w-full ${centerText ? 'text-center' : ''}`
 
     const directionClassName = iconPosition === 'left' ? 'pl-3' : 'flex-row-reverse pr-3'
 
     return(
         <Card className={`flex justify-center items-center rounded-md ${className} ${icon ? directionClassName : ''}`} noBlur noPadding {...cardProps} style={cardProps.style}>
             { icon && <div className='flex items-center'>{ icon }</div> }
-            <input className={inputClassName} onChange={inputUpdated} placeholder={placeholder} value={value} disabled={disabled} type={type} maxLength={maxLength} style={cardProps.style}></input>
+            <input
+                className={inputClassName}
+                onChange={inputUpdated}
+                placeholder={placeholder}
+                value={normalizedValue}
+                disabled={disabled}
+                type={type}
+                maxLength={maxLength}
+                style={cardProps.style}
+            />
         </Card>
     )
 }

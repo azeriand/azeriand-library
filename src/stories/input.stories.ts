@@ -107,6 +107,33 @@ export const CenterText: Story = {
   },
 };
 
+export const Types: Story = {
+  render: function TypedInputs() {
+    return React.createElement(
+      'div',
+      {
+        style: {
+          backgroundImage: "url(/background.jpg)",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: 32,
+          minHeight: 400,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 16,
+        }
+      },
+      React.createElement(Input, { placeholder: 'Text', type: 'text', className: 'w-[20rem]' }),
+      React.createElement(Input, { placeholder: 'Email (sin espacios)', type: 'email', className: 'w-[20rem]' }),
+      React.createElement(Input, { placeholder: 'Password', type: 'password', className: 'w-[20rem]' }),
+      React.createElement(Input, { placeholder: 'Number (solo dígitos)', type: 'number', className: 'w-[20rem]' }),
+      React.createElement(Input, { placeholder: 'Tel', type: 'tel', className: 'w-[20rem]' }),
+      React.createElement(Input, { placeholder: 'URL (sin espacios)', type: 'url', className: 'w-[20rem]' }),
+      React.createElement(Input, { placeholder: 'Search', type: 'search', className: 'w-[20rem]' }),
+    );
+  },
+};
+
 export const DisabledInput: Story = {
   render: function DefaultInputs() {
     return React.createElement(

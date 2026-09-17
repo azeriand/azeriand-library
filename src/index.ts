@@ -6,6 +6,7 @@ export { Badge } from './components/badge/badge';
 export { Checkbox } from './components/checkbox/checkbox';
 export { SectionName } from './components/section-name/section-name';
 export { Input } from './components/input/input';
+export type { InputType, InputProps } from './components/input/input';
 export { Calendar } from './components/calendar/calendar';
 export { ThemeContext, ThemeContextComponent } from './components/theme-context';
 export { Dropdown } from './components/dropdown/dropdown';
